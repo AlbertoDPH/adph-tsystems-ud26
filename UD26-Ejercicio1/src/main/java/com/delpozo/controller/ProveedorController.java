@@ -33,7 +33,7 @@ public class ProveedorController {
 	}
 
 	@GetMapping("/proveedores/{id}")
-	public Proveedor proveedorXID(@PathVariable(name = "id") String id) {
+	public Proveedor proveedorXID(@PathVariable(name = "id") Integer id) {
 
 		Proveedor proveedor_xid = new Proveedor();
 
@@ -45,7 +45,7 @@ public class ProveedorController {
 	}
 
 	@PutMapping("/proveedores/{id}")
-	public Proveedor actualizarProveedor(@PathVariable(name = "id") String id,
+	public Proveedor actualizarProveedor(@PathVariable(name = "id") Integer id,
 			@RequestBody Proveedor proveedor) {
 
 		Proveedor proveedor_seleccionado = new Proveedor();
@@ -63,7 +63,7 @@ public class ProveedorController {
 	}
 
 	@DeleteMapping("/proveedores/{id}")
-	public void eliminarProveedor(@PathVariable(name = "id") String id) {
+	public void eliminarProveedor(@PathVariable(name = "id") Integer id) {
 		proveedorServiceImpl.eliminarProveedor(id);
 	}
 

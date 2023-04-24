@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.delpozo.dto.Proveedor;
 
-public interface IProveedorDAO extends JpaRepository<Proveedor, String>{
+public interface IProveedorDAO extends JpaRepository<Proveedor, Integer>{
 
 }

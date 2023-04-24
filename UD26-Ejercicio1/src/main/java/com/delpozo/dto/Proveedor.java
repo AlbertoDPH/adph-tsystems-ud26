@@ -19,7 +19,7 @@ public class Proveedor {
 	// Atributos de entidad proveedor
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // busca ultimo valor e incrementa desde id final de db
-	private String id;
+	private int id;
 	private String nombre;
 
 	@OneToMany
@@ -33,23 +33,22 @@ public class Proveedor {
 	}
 
 	/**
-	 * 
 	 * @param id
 	 * @param nombre
 	 * @param suministra
 	 */
-	public Proveedor(String id, String nombre, List<Suministra> suministra) {
+	public Proveedor(int id, String nombre, List<Suministra> suministra) {
 		this.id = id;
 		this.nombre = nombre;
 		this.suministra = suministra;
 	}
 
 	// Getters y Setters
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -66,7 +65,7 @@ public class Proveedor {
 	}
 
 	@JsonIgnore
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "proveedor")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Suministra")
 	public List<Suministra> getSuministra() {
 		return suministra;
 	}
